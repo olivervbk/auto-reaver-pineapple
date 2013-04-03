@@ -1,0 +1,19 @@
+#config
+
+INTERFACE=mon0
+SUPPORTED_REAVER_VERSION="v1.4"
+
+REAVER_OPTS="-a -vv"
+
+WASH_PID="/tmp/wash.pid"
+REAVER_PID="/tmp/reaver.pid"
+
+TMP_DIR="/tmp"
+WASH_OUTPUT="$TMP_DIR/wash-output"
+REAVER_OUTPUT="$TMP_DIR/reaver-output"
+WASH_LOG="$TMP_DIR/wash.log"
+REAVER_LOG="$TMP_DIR/reaver.log"
+
+WHITELIST_FILE="/tmp/reaver-whitelist"
+RESULT_FILE="/tmp/reaver-result"
+
