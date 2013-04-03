@@ -3,13 +3,15 @@ auto-reaver-pineapple
 
 Pineapple infusion to execute reaver automatically
 
--early alpha, not working yet
+WARNING: Early alpha, not working yet!!!
 
-Todo:
--start implementing interface
-	-configure environment
-	-start/stop wash
-	-list found wifi
+Implemented features:
+- reaver/wash bash automation script should be "usable"(read testable)
 
-Working features:
--reaver/wash bash automation script should be "usable"(read testable)
+Being worked on:
+- [ ] configure environment
+- [ ] start/stop wash
+- [ ] list found wifi
+
+Planned features:
+- many
