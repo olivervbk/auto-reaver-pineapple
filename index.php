@@ -52,7 +52,8 @@ echo $output_text;
 		<div class="sidepanelRight">
 			<div class="sidepanelTitle">Info</div>
 			<div class="sidepanelContent">
-							</div>
+<?php showInfoMenu();?>
+			</div>
 		</div>
 	</body>
 </html>
