@@ -19,19 +19,26 @@ function listDetectedNetworks(){
 	global $CMD;
 	$output=array();
 	exec("$CMD get_wash", $output);
-	for ($i=0;$i<count($output);$i++){
-		$entry=split($output[$i],' ');
-		$bssid=$entry[0];
-		$channel=$entry[1];
-		$rssi=$entry[2];
-		$essid="";
-		for($j=3;$j<count($entry);$j++){
-			$essid+= $entry[$j]+" ";
-		}
-		$essid = trim($essid);
+	echo "<table>\n<tr><th>BSSID</th><th>CH</th><th>RSSI</th><th>ESSID</th></tr>\n";
+	if (count($output) > 0 ) {
+		for ($i=0;$i<count($output);$i++){
+			$entry=explode(' ', $output[$i]);
+			$bssid=$entry[0];
+			$channel=$entry[1];
+			$rssi=$entry[2];
+			$essid="";
+			for($j=3;$j<count($entry);$j++){
+				$essid = $essid." ".$entry[$j];
+			}
+			$essid = trim($essid);
 
-		echo "<tr><td><a href='action.php?do=crack&bssid=$bssid&channel=$channel'</a>$bssid</td><td>$channel</td><td>$rssi</td><td>\"$essid\"</td></tr>\n";
+			echo "<tr><td><a href='action.php?do=crack&bssid=$bssid&channel=$channel'</a>$bssid</td><td>$channel</td><td>$rssi</td><td>\"$essid\"</td></tr>\n";
+		}
+		echo "</table>";
+	}else{
+		echo "</table>(No network available)<br>\n";
 	}
+	echo "<br>\n";
 }
 
 
@@ -81,9 +88,7 @@ function showControlMenu(){
 
 function showInfoMenu() {
 	echo "<b>Found&nbsp;Access&nbsp;Points:</b><br>\n";
-	echo "<table>\n<tr><th>BSSID</th><th>CH</th><th>RSSI</th><th>ESSID</th></tr>\n";
 	listDetectedNetworks();
-	echo "</table><br>\n";
 	
 	echo "<b>Cracked:</b><br>\n";
 	echo "(empty)<br>\n";

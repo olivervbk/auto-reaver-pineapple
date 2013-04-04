@@ -46,7 +46,7 @@ if [[ "$opt" == "get_wash" ]]; then
 	#TODO: format output
 	#TODO: check log?
 	
-	tail -n+3 $WASH_OUTPUT | awk '{print $1" "$2" "$3" "$6}'
+	tail -n+3 $WASH_OUTPUT | awk '{$4=$5="";print $0}'
 fi
 
 if [[ "$opt" == "check_wash" ]]; then
