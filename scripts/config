@@ -1,6 +1,9 @@
 #config
 
 INTERFACE=mon0
+WIRELESS=wlan0
+MODULE=ath9k
+
 SUPPORTED_REAVER_VERSION="v1.4"
 
 REAVER_OPTS="-a -vv"
@@ -17,3 +20,5 @@ REAVER_LOG="$TMP_DIR/reaver.log"
 WHITELIST_FILE="/tmp/reaver-whitelist"
 RESULT_FILE="/tmp/reaver-result"
 
+WASH_BIN="/usb/usr/bin/wash"
+REAVER_BIN="/usb/usr/bin/reaver"
