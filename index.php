@@ -1,3 +1,14 @@
+<?php
+require("functions.php");
+
+$output_title="(Output is empty)";
+$output_text="";
+if(isset($_POST["output_title"])){
+	$output_title=base64_decode($_POST["output_title"]);
+	$output_text=base64_decode($_POST["output_text"]);
+}
+
+?>
 <html>
 	<head>
 		<title>Pineapple File Browser</title>
@@ -11,23 +22,7 @@
 		<div class="sidepanelLeft">
 			<div class="sidepanelTitle">Status</div>
 			<div class="sidepanelContent">
-				<table>
-				<tr><td>Wash</td><td><font color="lime"><b>running</b></font>.</td><td>(2123)</td></tr>
-				<tr><td>Reaver</td><td><font color="red"><b>stopped</b></font>.</td><td>()</td></tr>
-				</table>
-				<br>
-				
-				<b>Action:</b><br>
-				<a href="">[Scan]|[Stop scan]</a><br>
-				<a href="">[Auto mode]|[Stop auto mode]</a><br>
-				<br>
-				
-				<b>Config:</b><br>
-				<a href="">[Edit config]</a><br>
-				<a href="">[Configure]</a><br>
-				<a href="">[Clean]</a><br>
-				<br>
-				
+<?php showControlMenu();?>
 			</div>
 		</div>
 		<div class="content">
@@ -47,31 +42,17 @@
 			<div class="contentTitle">Output</div>
 			<div class="contentContent">
 			<pre>
-(output is empty)
+<?php
+echo $output_title."\n";
+echo $output_text;
+?>
 			</pre>
 			</div>
 		</div>
 		<div class="sidepanelRight">
 			<div class="sidepanelTitle">Info</div>
 			<div class="sidepanelContent">
-				<b>Found&nbsp;Access&nbsp;Points:</b><br>
-				<table>	
-				<tr><th>BSSID</th><th>CH</th><th>RSSI</th><th>ESSID</th></tr>
-				<tr><td><a href="">00:11:22:33:44:55</a></td><td>3</td><td>-40</td><td>"Teste"</td></tr>
-				<tr><td><a href="">C0:FF:EE:00:00:11</a></td><td>12</td><td>-89</td><td>"DLINK_WIRELESS"</td></tr>
-				</table>
-				<br>
-				
-				<b>Cracked:</b><br>
-				(empty)<br>
-				<br>
-				
-				<b>Whitelisted</b>&nbsp;<a href="">[edit]</a><b>:</b><br>
-				<ul>
-				<li>00:11:22:33:44:55</li>
-				</ul>
-				
-			</div>
+							</div>
 		</div>
 	</body>
 </html>
