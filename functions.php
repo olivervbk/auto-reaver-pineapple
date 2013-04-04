@@ -1,11 +1,12 @@
 <?php
 
-global $CMD="./scripts/control.sh";
+$CMD="./scripts/control.sh";
 
 function cmd($cmdString){
+	global $CMD;
 	$output=array();
 	$retcode=0;
-	exec("$CMD $cmdString", &$output, &$retcode);
+	exec("$CMD $cmdString", $output, $retcode);
 	if (count($output) > 1){
 		$output_text=join($output,"\n");
 	}else{
@@ -15,8 +16,9 @@ function cmd($cmdString){
 }
 
 function listDetectedNetworks(){
+	global $CMD;
 	$output=array();
-	exec("$CMD get_wash", &$output);
+	exec("$CMD get_wash", $output);
 	for ($i=0;$i<count($output);$i++){
 		$entry=split($output[$i],' ');
 		$bssid=$entry[0];
