@@ -23,3 +23,5 @@ Pineapple infusion to execute reaver automatically
 * change actions to async js calls? =/
 * change reaver & wash stats to async js calls?
 * change log view to async js calls? (would not need to reload index.php)
+* add manual attack option...
+* manage reavers history?
