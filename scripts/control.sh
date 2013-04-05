@@ -35,7 +35,7 @@ fi
 if [[ "$opt" == "start_wash" ]]; then
 	#TODO:check pid and remove	
 
-	$WASH_BIN -i $INTERFACE -o $WASH_OUTPUT &>$WASH_LOG &
+	$WASH_BIN -i $INTERFACE -o $WASH_OUTPUT &>/dev/null &
 	wash_pid=$!
 	
 	echo $wash_pid
@@ -74,8 +74,12 @@ if [[ "$opt" == "stop_wash" ]]; then
 	echo > $WASH_PID
 fi
 
+if [[ "$opt" == "log_wash" ]]; then
+	cat $WASH_OUTPUT
+fi
+
 if [[ "$opt" == "start_reaver" ]]; then
-	if [[ $# -ne 5 ]]; then
+	if [[ $# -ne 3 ]]; then
 		echo "$opt <bssid> <channel>"
 		exit 1;
 	fi
@@ -84,8 +88,8 @@ if [[ "$opt" == "start_reaver" ]]; then
 	
 	#TODO:check pid and remove	
 	
-	$REAVER_BIN -i $INTERFACE -b $bssid -c  $channel -o $REAVER_OUTPUT $REAVER_OPTS &>$REAVER_LOG &
-	reaver_pid=$?
+	$REAVER_BIN -i $INTERFACE -b $bssid -c  $channel -o $REAVER_OUTPUT $REAVER_OPTS &>/dev/null &
+	reaver_pid=$!
 	
 	echo $reaver_pid
 	echo $reaver_pid > $REAVER_PID
@@ -131,6 +135,10 @@ if [[ "$opt" == "stop_reaver" ]]; then
 		exit $code
 	fi
 	echo > $REAVER_PID
+fi
+
+if [[ "$opt" == "log_reaver" ]]; then
+	cat $REAVER_OUTPUT
 fi
 
 #TODO: manage whitelist
