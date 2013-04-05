@@ -2,7 +2,7 @@
 
 require("functions.php");
 
-$output_title="(Output is empty)";
+$output_title="(empty)";
 $output_text="";
 if (isset($_GET['do'])){
 	$action=$_GET['do'];
@@ -24,6 +24,11 @@ if (isset($_GET['do'])){
 	}elseif($action == "stop_reaver"){
 		$output_text=cmd("stop_reaver");
 
+	}elseif($action == "crack"){
+		$bssid=$_GET['bssid'];
+		$channel=$_GET['channel'];
+		$output_text=cmd("start_reaver $bssid $channel");
+
 	}else{
 		$output_title="(Action unknown)";
 	}
@@ -33,6 +38,7 @@ if (isset($_GET['do'])){
 <form id="msg" action="index.php" method="POST">
 <input type="hidden" name="output_title" value="<?php echo base64_encode($output_title);?>">
 <input type="hidden" name="output_text" value="<?php echo base64_encode($output_text);?>">
+<center><input type="submit" value="CONTINUE"></center>
 </form>
 <script type="text/javascript">document.forms["msg"].submit()</script>
 
