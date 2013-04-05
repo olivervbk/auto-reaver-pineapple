@@ -3,7 +3,7 @@ auto-reaver-pineapple
 
 Pineapple infusion to execute reaver automatically
 
-<b>WARNING: Early alpha, not working yet!!!</b>
+<b>WARNING: still alpha, not usable yet!!!</b>
 
 #### Implemented features:
 * reaver/wash bash automation script should be "usable" (read testable)
@@ -12,16 +12,17 @@ Pineapple infusion to execute reaver automatically
 * Wash can now be started and stopped
 * Output now shows some information on actions...
 * Info view now lists found access points
+* Reaver is now executed (started and stopped)
+* Can specify custom target
+* Output shows logs of last execution of reaver and wash
 
 #### Being worked on:
 * implement basic interface features
-  * start attack on selected network
-  * view status of attack
-  * show all reaver & wash logs ?
+  * implement results and whitelist for auto mode
+  * implement auto mode
 
 #### TODO:
 * change actions to async js calls? =/
 * change reaver & wash stats to async js calls?
 * change log view to async js calls? (would not need to reload index.php)
-* add manual attack option...
-* manage reavers history?
+* the less js the better...
