@@ -8,17 +8,16 @@ SUPPORTED_REAVER_VERSION="v1.4"
 
 REAVER_OPTS="-a -vv"
 
-WASH_PID="/tmp/wash.pid"
-REAVER_PID="/tmp/reaver.pid"
+
+WASH_PID="/tmp/autoreaver-wash.pid"
+REAVER_PID="/tmp/autoreaver-reaver.pid"
 
 TMP_DIR="/tmp"
-WASH_OUTPUT="$TMP_DIR/wash-output"
-REAVER_OUTPUT="$TMP_DIR/reaver-output"
-WASH_LOG="$TMP_DIR/wash.log"
-REAVER_LOG="$TMP_DIR/reaver.log"
+WASH_OUTPUT="$TMP_DIR/autoreaver-wash.out"
+REAVER_OUTPUT="$TMP_DIR/autoreaver-reaver.out"
 
-WHITELIST_FILE="/tmp/reaver-whitelist"
-RESULT_FILE="/tmp/reaver-result"
+WHITELIST_FILE="/tmp/autoreaver-whitelist"
+RESULT_FILE="/tmp/autoreaver-result"
 
 WASH_BIN="/usb/usr/bin/wash"
 REAVER_BIN="/usb/usr/bin/reaver"
