@@ -26,3 +26,6 @@ Pineapple infusion to execute reaver automatically
 * change reaver & wash stats to async js calls?
 * change log view to async js calls? (would not need to reload index.php)
 * the less js the better...
+
+#### FUTURE:
+* be able to use multiple (read.. two) interfaces? Would need to rewrite the whole thing...
