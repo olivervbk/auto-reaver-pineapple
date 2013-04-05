@@ -3,7 +3,7 @@ auto-reaver-pineapple
 
 Pineapple infusion to execute reaver automatically
 
-<b>WARNING: still alpha, not usable yet!!!</b>
+<b>WARNING: still alpha, dont expect it to work and not all basic features are implemented!!!</b>
 
 #### Implemented features:
 * reaver/wash bash automation script should be "usable" (read testable)
