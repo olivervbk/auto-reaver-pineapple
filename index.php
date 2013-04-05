@@ -37,14 +37,38 @@ if(isset($_POST["output_title"])){
 				</ul>
 			</div>
 		</div>
+
 		<br>
 		<div class="content">
-			<div class="contentTitle">Output</div>
+			<div class="contentTitle">Output <?php echo $output_title;?></div>
 			<div class="contentContent">
 			<pre>
 <?php
-echo $output_title."\n";
 echo $output_text;
+?>
+			</pre>
+			</div>
+		</div>
+
+		<br>
+		<div class="content">
+			<div class="contentTitle">Wash Log</div>
+			<div class="contentContent">
+			<pre>
+<?php
+echo cmd("log_wash");
+?>
+			</pre>
+			</div>
+		</div>
+
+		<br>
+		<div class="content">
+			<div class="contentTitle">Reaver Log</div>
+			<div class="contentContent">
+			<pre>
+<?php
+echo cmd("log_reaver");
 ?>
 			</pre>
 			</div>
