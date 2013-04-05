@@ -38,7 +38,6 @@ function listDetectedNetworks(){
 	}else{
 		echo "</table>(No network available)<br>\n";
 	}
-	echo "<br>\n";
 }
 
 
@@ -89,6 +88,16 @@ function showControlMenu(){
 function showInfoMenu() {
 	echo "<b>Found&nbsp;Access&nbsp;Points:</b><br>\n";
 	listDetectedNetworks();
+	echo "<b>Custom target:</b><a href='#' onclick=\"document.getElementById('custom_target').style.visibility='visible'; return false;\">(show)</a><br>\n";
+	echo "<div id='custom_target' style='visibility:hidden'>\n";
+	echo "<form action='action.php' method='get'>\n";
+	echo "<input type='hidden' name='do' value='crack'>\n";
+	echo "<input type='text' name='bssid' value='(bssid)' onfocus=\"this.value=''; this.onfocus=''\"><br>\n";
+	echo "<input type='text' name='channel' value='(channel)' onfocus=\"this.value=''; this.onfocus=''\"><br>\n";
+	echo "<input type='submit' value='Crack'><br>\n";
+	echo "</form>\n";
+	echo "</div>\n";
+	echo "<br>\n";
 	
 	echo "<b>Cracked:</b><br>\n";
 	echo "(empty)<br>\n";
